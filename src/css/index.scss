@@ -1,0 +1,79 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Fondo */
+.bg-color {
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;  
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.products{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.product-img{
+    background-color: #000;
+    flex-basis: 40rem;
+    height: 50rem;
+}
+
+.product-content{
+    background-color: #fff;
+    flex-basis: 50rem;
+    height: 60rem;
+    
+    
+
+}
+
+.product-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 3.5rem;
+    align-items: flex-end;
+
+    & .product-value{
+        font-size: 2rem;
+        color:#f3cd52;
+
+    }
+    & .product-price__number{
+        margin: 0;
+        font-size: 5rem;
+        position: relative;  
+    }
+    & .product-price__number::before{
+        content: "$";
+        font-size: 3rem;
+        position: absolute;
+        left: -2rem;
+    }
+}
+
+
+
+
+
+
+
+

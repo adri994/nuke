@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "parcel serve src/index.html",
+    "deploy": "rm -rf build && parcel build -d build --public-url /nuke/ src/index.html && gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "parcel-bundler": "^1.12.4",
+    "sass": "^1.32.7",
     "stylelint": "^13.10.0",
     "stylelint-config-standard": "^20.0.0"
   }
