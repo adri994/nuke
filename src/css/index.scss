@@ -1,3 +1,7 @@
+/* Colores */
+$black:#000;
+$white: #fff;
+
 html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -7,6 +11,15 @@ html {
 *::after {
     box-sizing: inherit;
 }
+
+/* Mixins */
+
+@mixin separate ($top:0rem, $right:0rem, $botton:2.5rem, $left: 0rem) {
+    padding: $top $right $botton $left;
+}
+@mixin bg-color ($color){
+    background-color: $color
+} 
 
 /* Fondo */
 .bg-color {
@@ -32,25 +45,23 @@ html {
 }
 
 .product-img{
-    background-color: #000;
-    flex-basis: 40rem;
+    background-color: $black;
+    flex-basis: 50rem;
     height: 50rem;
 }
 
 .product-content{
-    background-color: #fff;
+    @include separate($top:3rem, $right:4rem, $botton:2rem, $left: 4rem);
+    background-color: $white;
     flex-basis: 50rem;
     height: 60rem;
-    
-    
-
 }
 
 .product-header{
     display: flex;
     justify-content: space-between;
-    padding: 3rem 3.5rem;
     align-items: flex-end;
+    @include separate;
 
     & .product-value{
         font-size: 2rem;
@@ -68,6 +79,92 @@ html {
         position: absolute;
         left: -2rem;
     }
+}
+
+.product-name{
+    @include separate;
+    & h2{
+        font-size: 4rem;
+        margin: 0;
+        line-height: 1;
+    }
+    & p{
+        font-size: 3rem;
+        margin:0;
+    }
+}
+
+.product-color{
+    width: 65%;
+    h2{
+        text-transform: uppercase;
+        margin: 0;
+        line-height: 2;
+        font-size: 2rem;
+        color: #858383;
+    }
+}
+
+.colored-circles{
+    @include separate($botton:2.5rem);
+    display: flex;
+    justify-content: space-around;
+    
+    
+    & .circle{
+        height: 3.5rem;
+        flex-basis: calc(20% - 2rem);
+        border-radius: 50%;
+    }
+    & .circle:nth-child(1){
+        @include bg-color(#27fafa);
+    }
+    & .circle:nth-child(2){
+        @include bg-color(#072cfc);
+    }
+    & .circle:nth-child(3){
+        @include bg-color(green);
+    }
+    & .circle:nth-child(4){
+        @include bg-color(#27fafa);
+    }
+    & .circle:nth-child(5){
+        @include bg-color(#27fafa);
+    }
+}
+
+.product-size{
+    width: 40%;
+
+    & h2{
+        text-transform: uppercase;
+        font-size: 2rem;
+        margin: 0;
+        line-height: 2;
+        color: #858383;
+    }
+
+}
+.products-number{
+    display: flex;
+    border: 1px solid $black;
+    border-radius: 10rem;
+
+    & .product-size__items{
+        text-align: center;
+        font-size: 3rem;
+        flex-basis: calc(33.3%);   
+    }
+    & .product-size__items:nth-child(1){
+        
+    }
+    & .product-size__items:nth-child(2){
+
+    }
+    & .product-size__items:nth-child(3){
+
+    }
+
 }
 
 
